@@ -76,3 +76,14 @@ def search_crew(names, ranks, divisions, ids):
         for i in range(len(names)):
             if divisions[i] == div_choice:
                 print(f"{ids[i]} - {names[i]} - {ranks[i]}")
+
+def calculate_payroll(ranks):
+    total = 0
+    for r in ranks:
+        if r == "Captain":
+            total += 8000
+        elif r == "Commander":
+            total += 6000
+        else:
+            total += 4000
+    print(f"Total Monthly Crew Payroll: £{total}")
