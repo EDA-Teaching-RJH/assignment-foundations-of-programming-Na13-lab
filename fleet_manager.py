@@ -19,4 +19,23 @@ def view_crew_members(names, rank, divisions, ids):
     print("-"*60)
     for i in range(len(names)):
         print(f"{ids[i]:<10}{names[i]:<20}{rank[i]:<15}{divisions[i]:<15}")
-        
+
+def add_crew_member(names, ranks, divisions, ids):
+    new_id = input("Enter ID:")
+    if new_id in ids:
+        print("ID already exists. Please try again.")
+        return names, ranks, divisions, ids
+    new_rank = input("Enter Rank(Captain/Commander/Lieutenant/Counselor):")
+    valid_ranks = ["Captain", "Commander", "Lieutenant", "Counselor"] 
+    if new_rank not in valid_ranks:
+        print("Invalid rank. Please try again.")
+        return
+    names.append(input("Please enter a Name:"))
+    ranks.append(new_rank)
+    new_division = input("Enter Division(Security/Command/Counseling/Operations):") 
+    valid_divisions = ["Security", "Command", "Counseling", "Operations"]
+    if new_division not in valid_divisions:
+        print("Invalid Division. Please try again.")
+        return
+    ids.append(new_id) 
+    print("Crew Member added successfully. Welcome aboard!")
