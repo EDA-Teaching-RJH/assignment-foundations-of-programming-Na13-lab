@@ -30,3 +30,12 @@ Full Implementation = **5 Marks**
 #9th Bug: The logic (System Check, Fuel,etc) was written after the main while True loop which only allowed the code to run after the user exits the system. Organised it into a logical sequence by adding if __name__ == "__main__":
 
 #10th Bug: Missing Function Call; At the end the script just said run_system_monolith without the () which meant that the function was not triggered and it was just a function name. By adding the () like run_system_monolith(), the function was triggered so the program actually started.
+
+## Parallel List Strategy:
+This old_sytem.py uses 2 separate lists known as n(names), r(ranks) and d(divisions) to keep crew data. This is an example of Parallel list strategy. 
+
+# The dangers of parallel list strategy:
+The biggest risk of this strategy is Data Corruption through Desynchronization. This is because data is stored in 3 separate lists which means that any operation that modifies one list but forgets the others will destroy the relationship between the lists/items as well as the integrity of the database. If an item is removed from only one list, all subsequent items in the other lists will shift forward by one position which means that every item becomes incorrectly associated with the other items in the other lists, therefore making the whole database innacurate.
+
+# How can we prevent it:
+This can be prevented by insuring that every item added is performed in all lists simultaneously. For example in the old_system.py, every add (.append()) or remove(.pop()) was performed on all lists(name, rank, division) simultaneously using the same index. Another method is by using a list of dictionaries/objects instead of parallel lists. This means that every list will be grouped so that the data is physically tied together. For example by grouping the "Name", "Rank" and "Division" lists together["name": "Picard", "rank":"Captain"], the data is tied together which makes it impossible to delete a name without automatically deleting the associated rank and division. 
