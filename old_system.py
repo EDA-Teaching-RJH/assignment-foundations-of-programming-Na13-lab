@@ -69,7 +69,6 @@ def run_system_monolith():
         elif opt == "5":
             print("Shutting down.")
             break
-            
         else:
             print("Invalid.")
             
@@ -83,7 +82,7 @@ def run_system_monolith():
        
         if len(n) > 0:
             print("Database has entries.")
-        if len(n) == 0:
+        else:     #Fix: Replace the if/if into if/else. Prevents it from evaluating the length of the list twice to evaluating it just once.
             print("Database empty.")
 
         
