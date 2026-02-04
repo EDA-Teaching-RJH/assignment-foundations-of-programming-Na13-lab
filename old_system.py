@@ -13,7 +13,8 @@ def run_system_monolith():
     loading = 0
     while loading < 5:
         print("Loading module " + str(loading))
-        loading += 1 #Fix: Prevents infinite loop
+        loading += 1 
+#Fix: Prevents infinite loading loop. Loading < 5 lacked an increment statement which meant that the condition remained true forever.
         
     
     while True:
@@ -24,9 +25,9 @@ def run_system_monolith():
         print("4. Analyze Data")
         print("5. Exit")
         
-        opt = input("Select option: ")
+        opt = input("Select option:")
         
-        if opt == "1":  #Fix: Use len(n) instead of hardcoded 10 to avoid IndexError
+        if opt == "1":  #Fix: Use len(n) instead of hardcoded 10 to avoid IndexError as it was causing it to crash due to it looking for a 5th item that didn't exist
             print("Current Crew List:")
             
             for i in range(len(n)):
@@ -41,11 +42,11 @@ def run_system_monolith():
             n.append(new_name)
             n.append(new_rank)
             n.append(new_div) 
-            print("Crew member added.") #Fix: Keeps lists synced
+            print("Crew member added.") #Fix: Keeps lists synced. Keeps parallel lists the same length
             
         elif opt == "3":
             rem = input("Name to remove: ")
-            if rem in n
+            if rem in n:
                 idx = n.index(rem)
                 n.pop(idx)
                 r.pop(idx)
@@ -61,10 +62,10 @@ def run_system_monolith():
             
             for rank in r:
                 if rank == "Captain" or rank == "Commander": 
-                #Fix: Correct logical comparison ("commander") was recognised as a non empty spring
+                #Fix: Correct logical comparison ("Commander") was recognised as a non empty spring
                     count = count + 1
             print("High ranking officers:" + str(count)) 
-            #Fix: Place str() function. Since count in an integer and the message is a string, it gives TypeError as it cannot "add" a number to a tex
+            #Fix: Place str() function. Since count in an integer and the message is a string, it gives TypeError as it cannot "add" a number to a text
             
         elif opt == "5":
             print("Shutting down.")
@@ -72,7 +73,8 @@ def run_system_monolith():
         else:
             print("Invalid.")
             
-        
+        #Final Section(Post Loop)
+
         x = 10
         if x > 5:
             print("System Check OK")
@@ -94,4 +96,4 @@ def run_system_monolith():
             
         print("End of cycle.")
 
-run_system_monolith() #Fix: Added brackets to execute the function
+run_system_monolith() #Fix: Added brackets to execute the function. This triggers the function
