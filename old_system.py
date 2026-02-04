@@ -88,12 +88,13 @@ def run_system_monolith():
             print("Database empty.")
 
         
-        fuel = 100
-        consumption = 0
+        fuel = 30   #Fix: Removed "Pointless Loop" into a functional shutdown countdown
+        print("Expending remaining reserve power...")
         while fuel > 0:
-            print("Idling...")
-            break 
+            print("Power level: {fuel}%")
+            fuel -= 10   #Logic affects loop condition
             
-        print("End of cycle.")
+        print("\nSYSTEM OFFLINE. End of cycle.")
 
-run_system_monolith() #Fix: Added brackets to execute the function. This triggers the function
+if __name__ == "__main__":   #Fix: Call it main function in order to run the program
+    run_system_monolith() #Fix: Added brackets to execute the function. This triggers the function
