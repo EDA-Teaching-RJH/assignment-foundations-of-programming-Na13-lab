@@ -65,4 +65,14 @@ def update_rank(names, ranks, divisions, ids):
             print("Invalid rank. Please try again.")
     else:
         print("ID not found. Please try again!")
-        
+
+def search_crew(names, ranks, divisions, ids):
+    term = input("Search for name:").lower()
+    for i in range(len(names)):
+        if term in names[i].lower():
+            print(f"Match found: {ids[i]} - {names[i]} - {ranks[i]}")
+    def filter_by_division(names, divisions, ranks, ids):
+        div_choice = input("Enter Division to filter by(Security/Command/Counseling/Operations):")
+        for i in range(len(names)):
+            if divisions[i] == div_choice:
+                print(f"{ids[i]} - {names[i]} - {ranks[i]}")
