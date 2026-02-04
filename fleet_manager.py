@@ -51,4 +51,18 @@ def remove_crew_member(names, ranks, divisions, ids):
         print("Crew Member removed successfully.")
     else:
         print("ID not found. Please try again!")
+
+def update_rank(names, ranks, divisions, ids):
+    target_id = input("Enter the ID of the crew member whose you wish to promote/demote:")
+    if target_id in ids:
+        idx = ids.index(target_id)
+        new_rank = input("Enter new Rank(Captain/Commander/Lieutenant/Counselor):")
+        valid_ranks = ["Captain", "Commander", "Lieutenant", "Counselor"]
+        if new_rank in valid_ranks:
+            ranks[idx] = new_rank
+            print("Rank updated successfully.")
+        else:
+            print("Invalid rank. Please try again.")
+    else:
+        print("ID not found. Please try again!")
         
