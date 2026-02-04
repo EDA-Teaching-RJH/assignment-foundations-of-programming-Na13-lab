@@ -39,7 +39,9 @@ def run_system_monolith():
             
            
             n.append(new_name)
-            print("Crew member added.")
+            n.append(new_rank)
+            n.append(new_div) 
+            print("Crew member added.") #Fix: Keeps lists synced
             
         elif opt == "3":
             rem = input("Name to remove: ")
