@@ -4,3 +4,14 @@ def init_database():
     divisions = ["Security", "Command", "Command", "Counseling", "Operations"]
     ids = [ "03", "02", "01", "05", "04"]
     return names, ranks, divisions, ids 
+
+def display_menu(current_user):
+    print("\n--- WELCOME TO THE MENU ---")
+    print(f"Logged in as: {current_user}")
+    print("1. View Crew Members\n2. Add Crew Members\n3. Remove Crew Members")
+    print("4. Update Rank\n5. Search Crew\n6. Filter by Division")
+    print("7. Calculate Payroll\n8. Count officers\n9. Exit")
+    choice = input("Select option:")
+    return choice
+ 
+    
