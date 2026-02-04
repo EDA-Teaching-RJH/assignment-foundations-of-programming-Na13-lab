@@ -87,3 +87,8 @@ def calculate_payroll(ranks):
         else:
             total += 4000
     print(f"Total Monthly Crew Payroll: £{total}")
+
+def count_officers(ranks):
+    count = ranks.count("Captain") + ranks.count("Commander")
+    print(f"Total of High-Rank Officers: {count}")
+    
