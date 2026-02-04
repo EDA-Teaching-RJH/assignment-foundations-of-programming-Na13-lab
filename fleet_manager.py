@@ -39,3 +39,16 @@ def add_crew_member(names, ranks, divisions, ids):
         return
     ids.append(new_id) 
     print("Crew Member added successfully. Welcome aboard!")
+
+def remove_crew_member(names, ranks, divisions, ids):
+    target_id = input("Enter the ID of the crew member you wish to remove:")
+    if target_id in ids:
+        idx = ids.index(target_id)
+        names.pop(idx)
+        ranks.pop(idx)
+        divisions.pop(idx)
+        ids.pop(idx)
+        print("Crew Member removed successfully.")
+    else:
+        print("ID not found. Please try again!")
+        
