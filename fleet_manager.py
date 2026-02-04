@@ -14,11 +14,11 @@ def display_menu(current_user):
     choice = input("Select option:")
     return choice
 
-def view_crew_members(names, rank, divisions, ids):
+def view_crew_members(names, ranks, divisions, ids):
     print(f"\n{ 'ID':<10}{'Name':<20}{'Rank':<15}{'Division':<15}")
     print("-"*60)
     for i in range(len(names)):
-        print(f"{ids[i]:<10}{names[i]:<20}{rank[i]:<15}{divisions[i]:<15}")
+        print(f"{ids[i]:<10}{names[i]:<20}{ranks[i]:<15}{divisions[i]:<15}")
 
 def add_crew_member(names, ranks, divisions, ids):
     new_id = input("Enter ID:")
