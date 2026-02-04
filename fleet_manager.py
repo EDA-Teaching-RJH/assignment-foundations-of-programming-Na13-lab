@@ -13,5 +13,10 @@ def display_menu(current_user):
     print("7. Calculate Payroll\n8. Count officers\n9. Exit")
     choice = input("Select option:")
     return choice
- 
-    
+
+def view_crew_members(names, rank, divisions, ids):
+    print(f"\n{ 'ID':<10}{'Name':<20}{'Rank':<15}{'Division':<15}")
+    print("-"*60)
+    for i in range(len(names)):
+        print(f"{ids[i]:<10}{names[i]:<20}{rank[i]:<15}{divisions[i]:<15}")
+        
