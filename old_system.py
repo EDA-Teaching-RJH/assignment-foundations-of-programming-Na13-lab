@@ -60,9 +60,11 @@ def run_system_monolith():
             count = 0
             
             for rank in r:
-                if rank == "Captain" or "Commander": 
+                if rank == "Captain" or rank == "Commander": 
+                #Fix: Correct logical comparison ("commander") was recognised as a non empty spring
                     count = count + 1
-            print("High ranking officers: " + count) 
+            print("High ranking officers:" + str(count)) 
+            #Fix: Place str() function. Since count in an integer and the message is a string, it gives TypeError as it cannot "add" a number to a tex
             
         elif opt == "5":
             print("Shutting down.")
