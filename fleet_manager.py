@@ -71,11 +71,12 @@ def search_crew(names, ranks, divisions, ids):
     for i in range(len(names)):
         if term in names[i].lower():
             print(f"Match found: {ids[i]} - {names[i]} - {ranks[i]}")
-    def filter_by_division(names, divisions, ranks, ids):
+    
+def filter_by_division(names, divisions):
         div_choice = input("Enter Division to filter by(Security/Command/Counseling/Operations):")
         for i in range(len(names)):
             if divisions[i] == div_choice:
-                print(f"{ids[i]} - {names[i]} - {ranks[i]}")
+                print(f" {names[i]}")
 
 def calculate_payroll(ranks):
     total = 0
@@ -91,4 +92,34 @@ def calculate_payroll(ranks):
 def count_officers(ranks):
     count = ranks.count("Captain") + ranks.count("Commander")
     print(f"Total of High-Rank Officers: {count}")
-    
+
+def main():
+    user_name = input("Enter your username to login:")
+    names, ranks, divisions, ids = init_database()
+
+    while True:
+        choice = display_menu(user_name)
+        if choice == "1":
+            view_crew_members(names, ranks, divisions, ids)
+        elif choice == "2":
+            add_crew_member(names, ranks, divisions, ids)
+        elif choice == "3":
+            remove_crew_member(names, ranks, divisions, ids)
+        elif choice =="4":
+            update_rank(names, ranks, divisions, ids)
+        elif choice == "5":
+            search_crew(names, ranks, divisions, ids)
+        elif choice == "6":
+            filter_by_division(names, divisions)
+        elif choice == "7":
+            calculate_payroll(ranks)
+        elif choice == "8":
+            count_officers(ranks)
+        elif choice == "9":
+            print("Existing system. Goodbye!")
+            break
+        else:
+            print("Invalid option. Please try again!")
+            return
+if __name__ == "__main__":
+    main()
