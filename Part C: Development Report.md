@@ -25,8 +25,8 @@ Full Implementation = **5 Marks**
 
 #7th Bug: Reduntant Check; The original code used 2 separate if statements which meant that it was checking the length of the list twice. This means that even if the first condition was met, it would still check the second condition. By replacing it with a if/else statement, if the 1st condtion is met, the 2nd is automatically skipped. 
 
-#8th Bug: A while fuel > 0: loop was used but a break was used immediately inside it which made the logic irrelevant. In the fixed version it ensures the loop has an exit strategy that doesn't hang the terminal.
+#8th Bug: A while fuel > 0: loop was used but a break was used immediately inside it which made the logic irrelevant. Removed "Pointless Loop" into a functional shutdown countdown to provide purpose.
 
-#9th Bug: The logic (System Check, Fuel,etc) was written after the main while True loop which only allowed the code to run after the user exits the system. By organising the logic so that the boot up checks happen at the start and shutdown checks happen correctly at the end.
+#9th Bug: The logic (System Check, Fuel,etc) was written after the main while True loop which only allowed the code to run after the user exits the system. Organised it into a logical sequence by adding if __name__ == "__main__":
 
 #10th Bug: Missing Function Call; At the end the script just said run_system_monolith without the () which meant that the function was not triggered and it was just a function name. By adding the () like run_system_monolith(), the function was triggered so the program actually started.
